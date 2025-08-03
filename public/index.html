@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      canvas {
+        border: 1px solid black;
+        background: #f0f0f0;
+        display: block;
+        margin: auto;
+      }
+      #chatInput {
+        display: block;
+        margin: 10px auto;
+        width: 600px;
+        padding: 5px;
+        font-size: 16px;
+      }
+      #usernamePrompt {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border: 2px solid black;
+        text-align: center;
+      }
+      #usernameInput,
+      #avatarInput {
+        font-size: 16px;
+        padding: 5px;
+        width: 200px;
+        margin-bottom: 10px;
+      }
+      #usernameSubmit {
+        font-size: 16px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="usernamePrompt">
+      <h2>Enter your username</h2>
+      <input id="usernameInput" placeholder="Username" maxlength="15" />
+      <input id="avatarInput" type="file" accept="image/*" />
+      <button id="usernameSubmit">Join</button>
+    </div>
+
+    <canvas id="game" width="600" height="400" style="display: none"></canvas>
+    <input
+      id="chatInput"
+      placeholder="Type a message..."
+      autocomplete="off"
+      style="display: none"
+    />
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
